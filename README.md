@@ -15,7 +15,7 @@
 
 # math-array
 
-<!-- description -->
+Math utility to calculate with two arrays.
 
 ## Install
 
@@ -26,7 +26,23 @@ $ npm install math-array
 ## Usage
 
 ```js
-import math_array from 'math-array'
+import {
+  add,
+  sub,
+  mul,
+  div
+} from 'math-array'
+
+add([1, 2], [3, 4])   // [4, 6]
+add([1, 2], 3)        // [4, 5]
+add(3, [1, 2])        // [4, 5]
+add(1, 2)             // Error, at least one array is required
+
+sub(1, [1, 2])        // Error, the first argument must be an array
+sub([1, 2], 1)        // [0, 1]
+sub([1, 2], [1, 2])   // [0, 0]
+
+div([1, 2], [0, 1])   // Error, divide by zero
 ```
 
 ## License
