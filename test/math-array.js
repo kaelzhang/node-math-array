@@ -14,16 +14,6 @@ const methods = {
   div
 }
 
-
-const array = (length, ...items) => {
-  const ret = Array(length)
-  items.forEach((item, i) => {
-    ret[i] = item
-  })
-
-  return ret
-}
-
 let u
 
 
@@ -31,22 +21,22 @@ let u
   [
     'add',
     [[1, u], [1, u], 1],
-    array(2, 2)
+    [2,]
   ],
   [
     'sub',
     [[1, u], [1, 1], 1],
-    array(2, 0)
+    [0,]
   ],
   [
     'div',
     [[1, u], [1, 1], 1],
-    array(1, 1)
+    [1,]
   ],
   [
     'mul',
     [[1, u], [1, '2'], 1],
-    array(2, 1)
+    [1,]
   ],
   [
     'add',
