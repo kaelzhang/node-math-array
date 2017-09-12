@@ -12,4 +12,4 @@ const div = (a, b) => {
   return a / b
 }
 
-export default (a, b) => orderAware(a, b, div)
+export default (a, b, n) => orderAware(a, b, div, n)

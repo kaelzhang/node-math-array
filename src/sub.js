@@ -5,4 +5,4 @@ import {
 
 const sub = (a, b) => a - b
 
-export default (a, b) => orderAware(a, b, sub)
+export default (a, b, n) => orderAware(a, b, sub, n)

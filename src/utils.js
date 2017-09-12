@@ -28,26 +28,51 @@ const manipulateArray = (a, b, mutator) => {
 
 const isArray = (a, b) => [a, b].map(Array.isArray)
 
+const cleanArray = (array) => {
+  array.forEach((item, i) => {
+    if (item !== item) {
+      delete array[i]
+    }
+  })
+}
 
-export const orderUnaware = (a, b, mutator, mutatorReverse) => {
+export const orderUnaware = (
+  a, b, mutator, mutatorReverse,
+  ensureNumber
+) => {
   const [A, B] = isArray(a, b)
 
-  return A
+  const ret = A
     ? B
       ? manipulate2Array(a, b, mutator)
       : manipulateArray(a, b, mutator)
     : B
       ? manipulateArray(b, a, mutatorReverse)
       : error('at least one array is required')
+
+  if (ensureNumber) {
+    cleanArray(ret)
+  }
+
+  return ret
 }
 
 
-export const orderAware = (a, b, mutator) => {
+export const orderAware = (
+  a, b, mutator,
+  ensureNumber
+) => {
   const [A, B] = isArray(a, b)
 
-  return A
+  const ret = A
     ? B
       ? manipulate2Array(a, b, mutator)
       : manipulateArray(a, b, mutator)
     : error('the first argument must be an array')
+
+  if (ensureNumber) {
+    cleanArray(ret)
+  }
+
+  return ret
 }

@@ -6,4 +6,5 @@ import {
 const add = (a, b) => a + b
 const addReverse = (a, b) => b + a
 
-export default (a, b) => orderUnaware(a, b, add, addReverse)
+export default (a, b, n) =>
+  orderUnaware(a, b, add, addReverse, n)
