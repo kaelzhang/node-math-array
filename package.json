@@ -1,6 +1,6 @@
 {
   "name": "math-array",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Math utility to calculate with two arrays.",
   "main": "lib/index.js",
   "module": "src/index.js",

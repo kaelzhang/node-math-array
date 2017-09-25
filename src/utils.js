@@ -1,5 +1,5 @@
 export const error = (
-  message,
+  message
   // code
 ) => {
   const e = new Error(message)
